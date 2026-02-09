@@ -24,38 +24,30 @@ PolicyKit uses a three-tier rule evaluation system:
 
 ## Packages
 
-| Package | Description |
-|---------|-------------|
-| [`@policykit/sdk`](./sdk) | Core TypeScript SDK -- PolicyBuilder, PolicyKit client, PolicySimulator, Lit & IPFS integrations |
-| [`@policykit/cli`](./cli) | CLI for initializing, deploying, simulating, inspecting, and removing policies |
-| [`contracts`](./contracts) | Solidity smart contracts -- PolicyEngine, PolicyGuard, ERC-7579 module, rule evaluators |
-| [`lit-actions`](./lit-actions) | Lit Protocol actions for off-chain policy evaluation and EIP-712 attestation signing |
-| [`examples`](./examples) | Example implementations (smart account, agent wallet, DAO guard) |
+| Package | npm | Description |
+|---------|-----|-------------|
+| [`@policykit/sdk`](./sdk) | [![npm](https://img.shields.io/npm/v/@policykit/sdk)](https://www.npmjs.com/package/@policykit/sdk) | Core TypeScript SDK -- PolicyBuilder, PolicyKit client, PolicySimulator, Lit & IPFS integrations |
+| [`@policykit/cli`](./cli) | [![npm](https://img.shields.io/npm/v/@policykit/cli)](https://www.npmjs.com/package/@policykit/cli) | CLI for initializing, deploying, simulating, inspecting, and removing policies |
+| [`@policykit/contracts`](./contracts) | [![npm](https://img.shields.io/npm/v/@policykit/contracts)](https://www.npmjs.com/package/@policykit/contracts) | Solidity smart contracts -- PolicyEngine, PolicyGuard, ERC-7579 module, rule evaluators |
+| [`@policykit/lit-actions`](./lit-actions) | [![npm](https://img.shields.io/npm/v/@policykit/lit-actions)](https://www.npmjs.com/package/@policykit/lit-actions) | Lit Protocol actions for off-chain policy evaluation and EIP-712 attestation signing |
+| [`examples`](./examples) | -- | Example implementations (smart account, agent wallet, DAO guard) |
 
 ## Quick Start
-
-### Prerequisites
-
-- Node.js >= 18.0.0
-- [pnpm](https://pnpm.io/) >= 9.15.0
-- [Foundry](https://book.getfoundry.sh/) (for smart contract development)
 
 ### Install
 
 ```bash
-pnpm install
-```
+# SDK
+pnpm add @policykit/sdk
 
-### Build
+# CLI
+pnpm add -g @policykit/cli
 
-```bash
-pnpm build
-```
+# Solidity contracts (for your own smart contracts)
+pnpm add @policykit/contracts
 
-### Test
-
-```bash
-pnpm test
+# Lit Actions (pre-built bundle for off-chain evaluation)
+pnpm add @policykit/lit-actions
 ```
 
 ### Usage
@@ -84,6 +76,22 @@ const policy = new PolicyBuilder("treasury-policy")
 - **Turbo** + **pnpm** workspaces -- Monorepo orchestration
 - **Zod** -- Runtime validation
 - **IPFS (Pinata)** -- Content-addressed policy storage
+
+## Development
+
+### Prerequisites
+
+- Node.js >= 18.0.0
+- [pnpm](https://pnpm.io/) >= 9.15.0
+- [Foundry](https://book.getfoundry.sh/) (for smart contract development)
+
+```bash
+git clone https://github.com/policy-kit/policykit.git
+cd policykit
+pnpm install
+pnpm build
+pnpm test
+```
 
 ## Contributing
 
