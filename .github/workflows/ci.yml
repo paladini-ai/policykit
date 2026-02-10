@@ -73,6 +73,9 @@ jobs:
   slither:
     name: Slither Analysis
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
 
     defaults:
       run:
@@ -92,6 +95,8 @@ jobs:
 
       - name: Run Slither
         uses: crytic/slither-action@v0.4.0
+        id: slither
+        continue-on-error: true
         with:
           target: contracts/
           slither-config: contracts/slither.config.json
@@ -99,10 +104,14 @@ jobs:
           sarif: results/slither.sarif
 
       - name: Upload Slither SARIF
-        uses: github/codeql-action/upload-sarif@v3
-        if: always()
+        uses: github/codeql-action/upload-sarif@v4
+        if: always() && hashFiles('results/slither.sarif') != ''
         with:
           sarif_file: results/slither.sarif
+
+      - name: Fail on Slither findings
+        if: steps.slither.outcome == 'failure'
+        run: exit 1
 
   echidna:
     name: Echidna Fuzzing
@@ -121,29 +130,32 @@ jobs:
       - name: Install Foundry
         uses: foundry-rs/foundry-toolchain@v1
 
-      - name: Build contracts
-        run: forge build
+      - name: Build contracts with build-info
+        run: forge build --build-info
 
-      - name: Install Echidna
+      - name: Run Echidna – PolicyEngine
         uses: crytic/echidna-action@v2
         with:
-          files: contracts/test/echidna/EchidnaPolicyEngine.sol
+          files: test/echidna/EchidnaPolicyEngine.sol
           contract: EchidnaPolicyEngine
-          config: contracts/echidna.yaml
-          crytic-args: --foundry-out-directory contracts/out
+          config: echidna.yaml
+          echidna-workdir: contracts
+          crytic-args: --ignore-compile
 
       - name: Run Echidna – MaxValueRule
         uses: crytic/echidna-action@v2
         with:
-          files: contracts/test/echidna/EchidnaMaxValueRule.sol
+          files: test/echidna/EchidnaMaxValueRule.sol
           contract: EchidnaMaxValueRule
-          config: contracts/echidna.yaml
-          crytic-args: --foundry-out-directory contracts/out
+          config: echidna.yaml
+          echidna-workdir: contracts
+          crytic-args: --ignore-compile
 
       - name: Run Echidna – SpendLimitRule
         uses: crytic/echidna-action@v2
         with:
-          files: contracts/test/echidna/EchidnaSpendLimitRule.sol
+          files: test/echidna/EchidnaSpendLimitRule.sol
           contract: EchidnaSpendLimitRule
-          config: contracts/echidna.yaml
-          crytic-args: --foundry-out-directory contracts/out
+          config: echidna.yaml
+          echidna-workdir: contracts
+          crytic-args: --ignore-compile

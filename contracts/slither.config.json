@@ -1,11 +1,5 @@
 {
-  "filter_paths": ["lib", "test", "script"],
-  "solc_remaps": [
-    "forge-std/=lib/forge-std/src/",
-    "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/"
-  ],
-  "solc": "0.8.28",
-  "solc_args": "--via-ir --optimize --optimize-runs 200",
+  "filter_paths": "lib,test,script",
   "detectors_to_exclude": "naming-convention,solc-version",
   "exclude_informational": false,
   "exclude_low": false,
