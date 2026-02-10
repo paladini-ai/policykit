@@ -40,23 +40,15 @@ jobs:
       - name: Publish @policy-kit/contracts
         run: npm publish --access public
         working-directory: contracts
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish @policy-kit/sdk
         run: npm publish --access public
         working-directory: sdk
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish @policy-kit/cli
         run: npm publish --access public
         working-directory: cli
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish @policy-kit/lit-actions
         run: npm publish --access public
         working-directory: lit-actions
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
