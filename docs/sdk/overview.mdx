@@ -1,11 +1,11 @@
 ---
 title: SDK Overview
-description: Overview of the @policykit/sdk package
+description: Overview of the @policy-kit/sdk package
 ---
 
 # SDK Overview
 
-The `@policykit/sdk` package is the primary interface for building, deploying, and managing policies. It provides a collection of clients and utilities that work together.
+The `@policy-kit/sdk` package is the primary interface for building, deploying, and managing policies. It provides a collection of clients and utilities that work together.
 
 ## Package Exports
 
@@ -35,7 +35,7 @@ import {
   FailMode,
   RuleType,
   EvaluationReport,
-} from "@policykit/sdk";
+} from "@policy-kit/sdk";
 ```
 
 ## Components
@@ -63,7 +63,7 @@ import {
 ### Building a Policy
 
 ```typescript
-import { PolicyBuilder } from "@policykit/sdk";
+import { PolicyBuilder } from "@policy-kit/sdk";
 
 const policy = new PolicyBuilder("my-policy")
   .allowTargets(["0x..."])
@@ -75,7 +75,7 @@ const policy = new PolicyBuilder("my-policy")
 ### Deploying a Policy
 
 ```typescript
-import { PolicyKit } from "@policykit/sdk";
+import { PolicyKit } from "@policy-kit/sdk";
 
 const pk = new PolicyKit({ publicClient, walletClient, engineAddress, ipfsBackends });
 const result = await pk.deployPolicy(policy);
@@ -84,7 +84,7 @@ const result = await pk.deployPolicy(policy);
 ### Simulating a Transaction
 
 ```typescript
-import { PolicySimulator } from "@policykit/sdk";
+import { PolicySimulator } from "@policy-kit/sdk";
 
 const simulator = new PolicySimulator();
 const report = await simulator.evaluate(policy, txParams);

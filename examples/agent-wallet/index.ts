@@ -5,7 +5,7 @@
  * with composable, enforceable policies.
  */
 
-import { PolicyBuilder, PolicySimulator } from "@policykit/sdk";
+import { PolicyBuilder, PolicySimulator } from "@policy-kit/sdk";
 import { parseEther, type Address } from "viem";
 
 // DeFi protocol addresses on Base

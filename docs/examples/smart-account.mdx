@@ -18,7 +18,7 @@ You have a smart account that:
 ## Policy Definition
 
 ```typescript
-import { PolicyBuilder } from "@policykit/sdk";
+import { PolicyBuilder } from "@policy-kit/sdk";
 import { parseEther, parseUnits } from "viem";
 
 const UNISWAP_ROUTER = "0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45";
@@ -63,7 +63,7 @@ const policy = new PolicyBuilder("defi-smart-account")
 ## Deployment
 
 ```typescript
-import { PolicyKit } from "@policykit/sdk";
+import { PolicyKit } from "@policy-kit/sdk";
 import { createPublicClient, createWalletClient, http } from "viem";
 import { baseSepolia } from "viem/chains";
 
@@ -102,7 +102,7 @@ When the smart account executes a swap:
 ## Testing
 
 ```typescript
-import { PolicySimulator } from "@policykit/sdk";
+import { PolicySimulator } from "@policy-kit/sdk";
 
 const simulator = new PolicySimulator();
 

@@ -4,8 +4,8 @@ import {
   validatePolicy,
   policyFromJSON,
   encodeOnChainRules,
-} from "@policykit/sdk";
-import { cidToBytes32 } from "@policykit/sdk";
+} from "@policy-kit/sdk";
+import { cidToBytes32 } from "@policy-kit/sdk";
 import type { Address } from "viem";
 
 export const deployCommand = new Command("deploy")

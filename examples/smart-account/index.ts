@@ -7,7 +7,7 @@
  * 3. Simulate a transaction against the policy
  */
 
-import { PolicyBuilder, PolicySimulator, policyToJSON, FailMode } from "@policykit/sdk";
+import { PolicyBuilder, PolicySimulator, policyToJSON, FailMode } from "@policy-kit/sdk";
 import { parseEther, type Address } from "viem";
 
 // Example addresses (replace with real ones)

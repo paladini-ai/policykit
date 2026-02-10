@@ -12,7 +12,7 @@ This guide walks you through building, testing, and deploying a policy using Pol
 Use the `PolicyBuilder` to define your policy:
 
 ```typescript
-import { PolicyBuilder } from "@policykit/sdk";
+import { PolicyBuilder } from "@policy-kit/sdk";
 import { parseEther } from "viem";
 
 const policy = new PolicyBuilder("my-first-policy")
@@ -45,7 +45,7 @@ const policy = new PolicyBuilder("my-first-policy")
 Before deploying, test your policy locally with the `PolicySimulator`:
 
 ```typescript
-import { PolicySimulator } from "@policykit/sdk";
+import { PolicySimulator } from "@policy-kit/sdk";
 
 const simulator = new PolicySimulator();
 
@@ -64,7 +64,7 @@ console.log(report.results); // Detailed per-rule results
 Deploy your policy to IPFS and on-chain:
 
 ```typescript
-import { PolicyKit } from "@policykit/sdk";
+import { PolicyKit } from "@policy-kit/sdk";
 import { createPublicClient, createWalletClient, http } from "viem";
 import { baseSepolia } from "viem/chains";
 

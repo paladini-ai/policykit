@@ -17,7 +17,7 @@ importers:
 
   cli:
     dependencies:
-      '@policykit/sdk':
+      '@policy-kit/sdk':
         specifier: workspace:*
         version: link:../sdk
       commander:
@@ -36,6 +36,8 @@ importers:
       typescript:
         specifier: ^5.7.0
         version: 5.9.3
+
+  contracts: {}
 
   lit-actions:
     devDependencies:

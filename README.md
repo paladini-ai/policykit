@@ -26,10 +26,10 @@ PolicyKit uses a three-tier rule evaluation system:
 
 | Package | npm | Description |
 |---------|-----|-------------|
-| [`@policykit/sdk`](./sdk) | [![npm](https://img.shields.io/npm/v/@policykit/sdk)](https://www.npmjs.com/package/@policykit/sdk) | Core TypeScript SDK -- PolicyBuilder, PolicyKit client, PolicySimulator, Lit & IPFS integrations |
-| [`@policykit/cli`](./cli) | [![npm](https://img.shields.io/npm/v/@policykit/cli)](https://www.npmjs.com/package/@policykit/cli) | CLI for initializing, deploying, simulating, inspecting, and removing policies |
-| [`@policykit/contracts`](./contracts) | [![npm](https://img.shields.io/npm/v/@policykit/contracts)](https://www.npmjs.com/package/@policykit/contracts) | Solidity smart contracts -- PolicyEngine, PolicyGuard, ERC-7579 module, rule evaluators |
-| [`@policykit/lit-actions`](./lit-actions) | [![npm](https://img.shields.io/npm/v/@policykit/lit-actions)](https://www.npmjs.com/package/@policykit/lit-actions) | Lit Protocol actions for off-chain policy evaluation and EIP-712 attestation signing |
+| [`@policy-kit/sdk`](./sdk) | [![npm](https://img.shields.io/npm/v/@policy-kit/sdk)](https://www.npmjs.com/package/@policy-kit/sdk) | Core TypeScript SDK -- PolicyBuilder, PolicyKit client, PolicySimulator, Lit & IPFS integrations |
+| [`@policy-kit/cli`](./cli) | [![npm](https://img.shields.io/npm/v/@policy-kit/cli)](https://www.npmjs.com/package/@policy-kit/cli) | CLI for initializing, deploying, simulating, inspecting, and removing policies |
+| [`@policy-kit/contracts`](./contracts) | [![npm](https://img.shields.io/npm/v/@policy-kit/contracts)](https://www.npmjs.com/package/@policy-kit/contracts) | Solidity smart contracts -- PolicyEngine, PolicyGuard, ERC-7579 module, rule evaluators |
+| [`@policy-kit/lit-actions`](./lit-actions) | [![npm](https://img.shields.io/npm/v/@policy-kit/lit-actions)](https://www.npmjs.com/package/@policy-kit/lit-actions) | Lit Protocol actions for off-chain policy evaluation and EIP-712 attestation signing |
 | [`examples`](./examples) | -- | Example implementations (smart account, agent wallet, DAO guard) |
 
 ## Quick Start
@@ -38,22 +38,22 @@ PolicyKit uses a three-tier rule evaluation system:
 
 ```bash
 # SDK
-pnpm add @policykit/sdk
+pnpm add @policy-kit/sdk
 
 # CLI
-pnpm add -g @policykit/cli
+pnpm add -g @policy-kit/cli
 
 # Solidity contracts (for your own smart contracts)
-pnpm add @policykit/contracts
+pnpm add @policy-kit/contracts
 
 # Lit Actions (pre-built bundle for off-chain evaluation)
-pnpm add @policykit/lit-actions
+pnpm add @policy-kit/lit-actions
 ```
 
 ### Usage
 
 ```typescript
-import { PolicyBuilder } from "@policykit/sdk";
+import { PolicyBuilder } from "@policy-kit/sdk";
 import { parseEther } from "viem";
 
 const policy = new PolicyBuilder("treasury-policy")

@@ -1,0 +1,8 @@
+testMode: assertion
+testLimit: 50000
+shrinkLimit: 5000
+seqLen: 100
+deployer: "0x10000"
+sender: ["0x20000", "0x30000"]
+cryticArgs: ["--solc-remaps", "forge-std/=lib/forge-std/src/ @openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/", "--compile-force-framework", "foundry"]
+format: text

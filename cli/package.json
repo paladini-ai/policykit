@@ -1,5 +1,5 @@
 {
-  "name": "@policykit/cli",
+  "name": "@policy-kit/cli",
   "version": "0.1.0",
   "description": "CLI tool for PolicyKit — manage decentralized policies for smart accounts",
   "license": "MIT",
@@ -19,7 +19,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@policykit/sdk": "workspace:*",
+    "@policy-kit/sdk": "workspace:*",
     "commander": "^13.0.0",
     "viem": "^2.23.0"
   },

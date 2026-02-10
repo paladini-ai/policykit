@@ -129,7 +129,7 @@ import { deserializePolicy, type PolicyJSON } from "./core/PolicySchema.js";
  *
  * @example
  * ```ts
- * import { PolicyKit, PolicyBuilder } from "@policykit/sdk";
+ * import { PolicyKit, PolicyBuilder } from "@policy-kit/sdk";
  *
  * // Build a policy
  * const policy = new PolicyBuilder("my-agent-policy")

@@ -1,5 +1,5 @@
 {
-  "name": "@policykit/lit-actions",
+  "name": "@policy-kit/lit-actions",
   "version": "0.1.0",
   "description": "Lit Protocol v8 (Naga) Actions for PolicyKit off-chain policy evaluation",
   "license": "MIT",

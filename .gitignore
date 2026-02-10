@@ -35,6 +35,14 @@ Thumbs.db
 coverage/
 lcov.info
 
+# Slither
+results/
+slither-report/
+
+# Echidna
+crytic-export/
+corpus/
+
 # Logs
 *.log
 npm-debug.log*

@@ -41,7 +41,7 @@ PolicyKit supports two fail modes:
 
 PolicyKit consists of four main components:
 
-### 1. SDK (`@policykit/sdk`)
+### 1. SDK (`@policy-kit/sdk`)
 
 The TypeScript SDK is the primary interface for building and managing policies. It provides:
 
@@ -52,25 +52,25 @@ The TypeScript SDK is the primary interface for building and managing policies. 
 - `LitClient` — Integration with Lit Protocol v8
 - `IPFSClient` — IPFS pinning and retrieval
 
-### 2. Smart Contracts (`@policykit/contracts`)
+### 2. Smart Contracts (`@policy-kit/contracts`)
 
-Solidity contracts deployed on-chain that enforce policy rules. Available as an [npm package](https://www.npmjs.com/package/@policykit/contracts) for use in your own Solidity projects:
+Solidity contracts deployed on-chain that enforce policy rules. Available as an [npm package](https://www.npmjs.com/package/@policy-kit/contracts) for use in your own Solidity projects:
 
 - `PolicyEngine` — Core contract that stores and evaluates policies
 - `PolicyGuard` — Guard module for smart accounts
 - `PolicyKit7579Module` — ERC-7579 compatible module
 - Rule evaluators — Individual contracts for each rule type
 
-### 3. Lit Actions (`@policykit/lit-actions`)
+### 3. Lit Actions (`@policy-kit/lit-actions`)
 
-TypeScript code executed on the Lit Protocol network for off-chain rule evaluation. Available as an [npm package](https://www.npmjs.com/package/@policykit/lit-actions) containing the pre-built action bundle and source rules. The Lit Action:
+TypeScript code executed on the Lit Protocol network for off-chain rule evaluation. Available as an [npm package](https://www.npmjs.com/package/@policy-kit/lit-actions) containing the pre-built action bundle and source rules. The Lit Action:
 
 1. Fetches the full policy from IPFS
 2. Evaluates Tier 3 (off-chain) rules
 3. If all rules pass, threshold-signs an EIP-712 `PolicyApproval`
 4. Returns the signed attestation for on-chain verification
 
-### 4. CLI (`@policykit/cli`)
+### 4. CLI (`@policy-kit/cli`)
 
 A command-line tool for common policy operations:
 

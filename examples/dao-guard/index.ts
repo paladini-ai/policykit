@@ -6,7 +6,7 @@
  * allowed targets, blocked functions).
  */
 
-import { PolicyBuilder, PolicySimulator } from "@policykit/sdk";
+import { PolicyBuilder, PolicySimulator } from "@policy-kit/sdk";
 import { parseEther, type Address } from "viem";
 
 // Example: DAO treasury and approved protocol addresses

@@ -1,7 +1,7 @@
 import { Command } from "commander";
-import { PolicyBuilder, type Policy } from "@policykit/sdk";
+import { PolicyBuilder, type Policy } from "@policy-kit/sdk";
 import { writeFileSync } from "node:fs";
-import { policyToJSON } from "@policykit/sdk";
+import { policyToJSON } from "@policy-kit/sdk";
 import { parseEther } from "viem";
 
 export const initCommand = new Command("init")

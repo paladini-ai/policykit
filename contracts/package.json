@@ -1,5 +1,5 @@
 {
-  "name": "@policykit/contracts",
+  "name": "@policy-kit/contracts",
   "version": "0.1.0",
   "description": "Solidity smart contracts for PolicyKit — decentralized policies-as-code for smart accounts and agents",
   "license": "MIT",
@@ -12,7 +12,12 @@
   "scripts": {
     "build": "forge build",
     "test": "forge test",
-    "clean": "forge clean"
+    "clean": "forge clean",
+    "slither": "slither . --config-file slither.config.json",
+    "slither:triage": "slither . --config-file slither.config.json --triage-mode",
+    "echidna:policy-engine": "echidna test/echidna/EchidnaPolicyEngine.sol --contract EchidnaPolicyEngine --config echidna.yaml",
+    "echidna:max-value": "echidna test/echidna/EchidnaMaxValueRule.sol --contract EchidnaMaxValueRule --config echidna.yaml",
+    "echidna:spend-limit": "echidna test/echidna/EchidnaSpendLimitRule.sol --contract EchidnaSpendLimitRule --config echidna.yaml"
   },
   "keywords": [
     "solidity",

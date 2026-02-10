@@ -36,10 +36,10 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: pnpm turbo run build --filter='!@policykit/contracts'
+        run: pnpm turbo run build --filter='!@policy-kit/contracts'
 
       - name: Test
-        run: pnpm turbo run test --filter='!@policykit/contracts'
+        run: pnpm turbo run test --filter='!@policy-kit/contracts'
 
   contracts:
     name: Contracts (Foundry)
@@ -69,3 +69,81 @@ jobs:
 
       - name: Run coverage
         run: forge coverage --ir-minimum
+
+  slither:
+    name: Slither Analysis
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: contracts
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+
+      - name: Build contracts
+        run: forge build
+
+      - name: Run Slither
+        uses: crytic/slither-action@v0.4.0
+        with:
+          target: contracts/
+          slither-config: contracts/slither.config.json
+          fail-on: medium
+          sarif: results/slither.sarif
+
+      - name: Upload Slither SARIF
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: results/slither.sarif
+
+  echidna:
+    name: Echidna Fuzzing
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: contracts
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+
+      - name: Build contracts
+        run: forge build
+
+      - name: Install Echidna
+        uses: crytic/echidna-action@v2
+        with:
+          files: contracts/test/echidna/EchidnaPolicyEngine.sol
+          contract: EchidnaPolicyEngine
+          config: contracts/echidna.yaml
+          crytic-args: --foundry-out-directory contracts/out
+
+      - name: Run Echidna – MaxValueRule
+        uses: crytic/echidna-action@v2
+        with:
+          files: contracts/test/echidna/EchidnaMaxValueRule.sol
+          contract: EchidnaMaxValueRule
+          config: contracts/echidna.yaml
+          crytic-args: --foundry-out-directory contracts/out
+
+      - name: Run Echidna – SpendLimitRule
+        uses: crytic/echidna-action@v2
+        with:
+          files: contracts/test/echidna/EchidnaSpendLimitRule.sol
+          contract: EchidnaSpendLimitRule
+          config: contracts/echidna.yaml
+          crytic-args: --foundry-out-directory contracts/out

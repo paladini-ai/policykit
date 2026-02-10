@@ -17,15 +17,15 @@ Install the core SDK in your project:
 <CodeGroup>
 
 ```bash pnpm
-pnpm add @policykit/sdk
+pnpm add @policy-kit/sdk
 ```
 
 ```bash npm
-npm install @policykit/sdk
+npm install @policy-kit/sdk
 ```
 
 ```bash yarn
-yarn add @policykit/sdk
+yarn add @policy-kit/sdk
 ```
 
 </CodeGroup>
@@ -53,11 +53,11 @@ Install the CLI globally:
 <CodeGroup>
 
 ```bash pnpm
-pnpm add -g @policykit/cli
+pnpm add -g @policy-kit/cli
 ```
 
 ```bash npm
-npm install -g @policykit/cli
+npm install -g @policy-kit/cli
 ```
 
 </CodeGroup>
@@ -79,11 +79,11 @@ forge install policy-kit/policykit
 ```
 
 ```bash npm
-npm install @policykit/contracts
+npm install @policy-kit/contracts
 ```
 
 ```bash pnpm
-pnpm add @policykit/contracts
+pnpm add @policy-kit/contracts
 ```
 
 </CodeGroup>
@@ -91,14 +91,14 @@ pnpm add @policykit/contracts
 Then import the contracts in your Solidity code:
 
 ```solidity
-import { IPolicyEngine } from "@policykit/contracts/src/core/IPolicyEngine.sol";
-import { IRuleEvaluator } from "@policykit/contracts/src/rules/IRuleEvaluator.sol";
+import { IPolicyEngine } from "@policy-kit/contracts/src/core/IPolicyEngine.sol";
+import { IRuleEvaluator } from "@policy-kit/contracts/src/rules/IRuleEvaluator.sol";
 ```
 
 <Note>
   If using Foundry with the npm package, add a remapping to your `remappings.txt`:
   ```
-  @policykit/contracts/=node_modules/@policykit/contracts/
+  @policy-kit/contracts/=node_modules/@policy-kit/contracts/
   ```
 </Note>
 
@@ -125,11 +125,11 @@ Install the Lit Actions package to get the pre-built policy evaluator bundle for
 <CodeGroup>
 
 ```bash pnpm
-pnpm add @policykit/lit-actions
+pnpm add @policy-kit/lit-actions
 ```
 
 ```bash npm
-npm install @policykit/lit-actions
+npm install @policy-kit/lit-actions
 ```
 
 </CodeGroup>

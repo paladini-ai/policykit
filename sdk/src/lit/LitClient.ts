@@ -61,7 +61,7 @@ export interface LitPolicyResult {
  * ```ts
  * import { createLitClient } from "@lit-protocol/lit-client";
  * import { nagaDev } from "@lit-protocol/networks";
- * import { LitClient } from "@policykit/sdk";
+ * import { LitClient } from "@policy-kit/sdk";
  *
  * const pkLitClient = new LitClient({
  *   network: "naga-dev",

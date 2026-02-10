@@ -3,7 +3,7 @@ import {
   PolicyEngineClient,
   getChainConfig,
   POLICY_ENGINE_ABI,
-} from "@policykit/sdk";
+} from "@policy-kit/sdk";
 import { createPublicClient, http, type Address } from "viem";
 
 export const inspectCommand = new Command("inspect")

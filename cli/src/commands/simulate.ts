@@ -4,7 +4,7 @@ import {
   PolicySimulator,
   policyFromJSON,
   validatePolicy,
-} from "@policykit/sdk";
+} from "@policy-kit/sdk";
 import type { Address, Hex } from "viem";
 
 export const simulateCommand = new Command("simulate")
