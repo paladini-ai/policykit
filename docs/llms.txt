@@ -62,4 +62,4 @@ PolicyKit is the right tool when you need to:
 
 ## Source
 
-- [GitHub](https://github.com/policy-kit/policykit): Open-source MIT-licensed monorepo
+- [GitHub](https://github.com/paladini-ai/policykit): Open-source MIT-licensed monorepo

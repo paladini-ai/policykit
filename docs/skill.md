@@ -4,9 +4,9 @@ description: Build and enforce transaction policies for ERC-7579 smart accounts 
 license: MIT
 compatibility: Requires Node.js >= 18.0.0 and pnpm or npm. Solidity contracts use Foundry. Supports ERC-4337 and ERC-7579 smart accounts.
 metadata:
-  author: policy-kit
+  author: paladini-ai
   version: "0.1.0"
-  github: https://github.com/policy-kit/policykit
+  github: https://github.com/paladini-ai/policykit
 ---
 
 # PolicyKit
